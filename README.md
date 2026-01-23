@@ -75,7 +75,7 @@ gcc traffic_signal.c -o traffic_signal
 **Efficiency Gain:** 30-40% theoretical improvement over fixed-time systems
 
 ##  Documentation
-For detailed technical documentation, see [Technical Report](Smart_Traffic_Signal_final.pdf)
+For detailed technical documentation, see [Technical Report](SmartTrafficSignal.pdf)
 
 The report includes:
 - System architecture and design
