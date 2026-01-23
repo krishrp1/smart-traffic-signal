@@ -110,20 +110,3 @@ Institution: B.M.S. College of Engineering
 Semester: 2024-2025
 ```
 
-### Step 3: Add Topics (Tags)
-1. On your repository main page, click the **⚙️ gear icon** next to "About" (top right)
-2. Add these topics:
-   - `c`
-   - `data-structures`
-   - `queue`
-   - `circular-queue`
-   - `traffic-management`
-   - `algorithm`
-   - `greedy-algorithm`
-   - `smart-city`
-   - `priority-scheduling`
-
-### Step 4: Verify Your Repository URL
-Your final repository will be at:
-```
-https://github.com/krishrp1/Smart-Traffic-Signal
