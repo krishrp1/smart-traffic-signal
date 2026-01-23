@@ -4,23 +4,23 @@ Queue-based intelligent traffic signal controller system with priority schedulin
 
 An intelligent traffic signal management system using circular queue data structures to dynamically optimize traffic flow at four-way intersections based on real-time vehicle density.
 
-## 🚦 Overview
+##  Overview
 This project implements a smart traffic controller that prioritizes traffic signals based on vehicle count, allocating green light duration proportionally to reduce congestion and minimize waiting time.
 
-## ✨ Features
+##  Features
 - **Dynamic Priority Scheduling:** Direction with highest vehicle count gets priority
 - **Adaptive Timing:** Green time = 5 + vehicle count (in seconds)
 - **Circular Queue Implementation:** Efficient O(1) enqueue/dequeue operations
 - **Real-time Monitoring:** Track vehicle counts across all four directions
 - **Throughput Control:** Maximum 5 vehicles per cycle to prevent monopolization
 
-## 🛠️ Technology Stack
+##  Technology Stack
 - **Language:** C
 - **Data Structure:** Circular Queue (Ring Buffer)
 - **Algorithm:** Priority-based Greedy Scheduling
 - **Capacity:** 20 vehicles per direction
 
-## 📋 How It Works
+##  How It Works
 
 ### System Architecture
 The system maintains four independent circular queues representing traffic from:
@@ -45,7 +45,7 @@ Vehicles Passed: 5
 Remaining: 5 vehicles in North queue
 ```
 
-## 🚀 Installation & Usage
+##  Installation & Usage
 
 ### Compilation
 ```bash
@@ -63,7 +63,7 @@ gcc traffic_signal.c -o traffic_signal
 3. **Process traffic signal** - Execute one signal cycle
 4. **Exit** - End simulation
 
-## 📊 Performance Analysis
+##  Performance Analysis
 
 **Time Complexity:**
 - Vehicle Addition: O(n) where n = number of vehicles
@@ -74,7 +74,7 @@ gcc traffic_signal.c -o traffic_signal
 
 **Efficiency Gain:** 30-40% theoretical improvement over fixed-time systems
 
-## 📄 Documentation
+##  Documentation
 For detailed technical documentation, see [Technical Report](Smart_Traffic_Signal_final.pdf)
 
 The report includes:
@@ -84,7 +84,7 @@ The report includes:
 - Testing results and scenarios
 - Future research directions
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 - Machine learning integration for traffic pattern prediction
 - Multi-intersection coordination for green wave effect
 - Real-time sensor/camera integration
@@ -92,7 +92,7 @@ The report includes:
 - Vehicle-to-Infrastructure (V2I) communication
 - Emergency vehicle preemption
 
-## 👨‍💻 Author
+##  Author
 **Krish Ramesh Pareet**  
 B.E. Computer Science and Business Systems  
 B.M.S. College of Engineering
