@@ -92,21 +92,21 @@ The report includes:
 - Vehicle-to-Infrastructure (V2I) communication
 - Emergency vehicle preemption
 
+##  License
+MIT License - feel free to use this project for learning and development
+
+## Acknowledgments
+Course: Data Structures and Applications  
+Institution: B.M.S. College of Engineering  
+Semester: 2024-2025
+
 ##  Author
 **Krish Ramesh Pareet**  
 B.E. Computer Science and Business Systems  
 B.M.S. College of Engineering
 
-- 📧 Email: krishrpareet@gmail.com
-- 💼 LinkedIn: [krish-pareet](https://www.linkedin.com/in/krish-pareet-3b949031b/)
-- 🐙 GitHub: [@krishrp1](https://github.com/krishrp1)
-
-## 📝 License
-MIT License - feel free to use this project for learning and development
-
-## 🙏 Acknowledgments
-Course: Data Structures and Applications  
-Institution: B.M.S. College of Engineering  
-Semester: 2024-2025
+-  Email: krishrpareet@gmail.com
+-  LinkedIn: [krish-pareet](https://www.linkedin.com/in/krish-pareet-3b949031b/)
+-  GitHub: [@krishrp1](https://github.com/krishrp1)
 ```
 
