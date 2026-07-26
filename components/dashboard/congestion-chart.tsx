@@ -5,6 +5,7 @@ import {
   BarChart,
   CartesianGrid,
   Cell,
+  LabelList,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -70,6 +71,11 @@ export function CongestionChart({ state }: { state: SimulationState }) {
                 radius={[6, 6, 0, 0]}
                 isAnimationActive={false}
               >
+                <LabelList
+                  dataKey="queueLength"
+                  position="top"
+                  style={{ fill: "var(--color-muted-foreground)", fontSize: 11 }}
+                />
                 {data.map((entry) => (
                   <Cell key={entry.key} fill={DIRECTION_COLORS[entry.key]} />
                 ))}

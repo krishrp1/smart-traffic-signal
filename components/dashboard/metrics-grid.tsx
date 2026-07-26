@@ -64,8 +64,12 @@ export function MetricsGrid({ state }: { state: SimulationState }) {
 
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-      {metrics.map(({ label, value, icon: Icon, hint }) => (
-        <Card key={label}>
+      {metrics.map(({ label, value, icon: Icon, hint }, index) => (
+        <Card
+          key={label}
+          className="animate-in fade-in-0 slide-in-from-bottom-2 fill-mode-backwards duration-500"
+          style={{ animationDelay: `${index * 60}ms` }}
+        >
           <CardHeader className="flex-row items-center justify-between gap-2 space-y-0 p-4 pb-1">
             <CardTitle className="text-muted-foreground text-xs font-medium">{label}</CardTitle>
             <Icon className="text-muted-foreground size-4" />

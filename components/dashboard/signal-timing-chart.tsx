@@ -5,6 +5,7 @@ import {
   BarChart,
   CartesianGrid,
   Cell,
+  LabelList,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -69,6 +70,11 @@ export function SignalTimingChart({ state }: { state: SimulationState }) {
                 radius={[4, 4, 0, 0]}
                 isAnimationActive={false}
               >
+                <LabelList
+                  dataKey="greenTime"
+                  position="top"
+                  style={{ fill: "var(--color-muted-foreground)", fontSize: 10 }}
+                />
                 {data.map((entry, index) => (
                   <Cell
                     key={`${entry.cycle}-${index}`}
