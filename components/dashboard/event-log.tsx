@@ -18,31 +18,41 @@ export function EventLog({ state }: { state: SimulationState }) {
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Event log</CardTitle>
-        <CardDescription>Accidents, emergency overrides, and scenario changes</CardDescription>
+      <CardHeader className="flex-row items-center justify-between space-y-0">
+        <div>
+          <CardTitle className="font-mono text-xs font-bold tracking-widest uppercase">
+            System logs
+          </CardTitle>
+          <CardDescription>Accidents, emergency overrides, and scenario changes</CardDescription>
+        </div>
+        <span className="bg-success size-2 animate-pulse rounded-full" aria-hidden="true" />
       </CardHeader>
       <CardContent>
         {events.length === 0 ? (
-          <p className="text-muted-foreground text-sm">No events yet — start the simulation.</p>
+          <p className="text-muted-foreground font-mono text-xs">
+            No events yet — start the simulation.
+          </p>
         ) : (
-          <ul className="flex max-h-72 flex-col gap-2 overflow-y-auto pr-1" aria-live="polite">
+          <ul
+            className="bg-muted/40 border-border/60 flex max-h-72 flex-col gap-1.5 overflow-y-auto rounded-md border p-2"
+            aria-live="polite"
+          >
             {events.map((event) => (
               <li
                 key={event.id}
                 className={cn(
-                  "border-border/60 bg-muted/30 flex items-start justify-between gap-3 rounded-md border px-3 py-2 text-sm",
+                  "flex items-start justify-between gap-3 rounded px-2 py-1.5 font-mono text-[11px]",
                 )}
               >
-                <span className="text-foreground">{event.message}</span>
-                <div className="flex shrink-0 items-center gap-2">
-                  <span className="text-muted-foreground text-xs tabular-nums">
-                    t={event.tick}s
-                  </span>
-                  <Badge variant={KIND_VARIANT[event.kind]} className="capitalize">
-                    {event.kind}
-                  </Badge>
-                </div>
+                <span className="text-foreground/90">
+                  <span className="text-muted-foreground">[t={event.tick}s]</span> {event.message}
+                </span>
+                <Badge
+                  variant={KIND_VARIANT[event.kind]}
+                  className="shrink-0 font-mono text-[9px] capitalize"
+                >
+                  {event.kind}
+                </Badge>
               </li>
             ))}
           </ul>

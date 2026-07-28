@@ -95,28 +95,40 @@ function VehicleQueueLane({ direction, state, orientation }: LaneProps) {
 export function IntersectionCanvas({ state }: { state: SimulationState }) {
   return (
     <div
-      className="bg-card grid aspect-square w-full grid-cols-[1fr_auto_1fr] grid-rows-[1fr_auto_1fr] gap-1 rounded-xl border p-3 sm:p-4"
+      className="bg-card border-border relative overflow-hidden rounded-xl border p-3 sm:p-4"
       aria-live="off"
     >
-      <div />
-      <VehicleQueueLane direction="north" state={state} orientation="vertical" />
-      <div />
-
-      <VehicleQueueLane direction="west" state={state} orientation="horizontal" />
-      <div className="border-border bg-secondary/30 flex aspect-square w-16 flex-col items-center justify-center gap-1 self-center justify-self-center rounded-lg border-2 border-dashed text-center sm:w-24">
-        <span className="text-muted-foreground text-[10px] tracking-wide uppercase">Active</span>
-        <span className="text-sm font-semibold capitalize">{state.activeDirection ?? "idle"}</span>
-        {state.activeDirection && (
-          <span className="text-muted-foreground text-xs tabular-nums">
-            {state.currentGreenTimeSeconds}s
-          </span>
-        )}
+      <div className="bg-grid pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
+      <div
+        className="text-primary bg-primary/10 border-primary/20 absolute top-3 left-3 z-10 rounded border px-2 py-0.5 font-mono text-[9px] tracking-widest uppercase"
+        aria-hidden="true"
+      >
+        Sim_view // live
       </div>
-      <VehicleQueueLane direction="east" state={state} orientation="horizontal" />
 
-      <div />
-      <VehicleQueueLane direction="south" state={state} orientation="vertical" />
-      <div />
+      <div className="relative grid aspect-square w-full grid-cols-[1fr_auto_1fr] grid-rows-[1fr_auto_1fr] gap-1">
+        <div />
+        <VehicleQueueLane direction="north" state={state} orientation="vertical" />
+        <div />
+
+        <VehicleQueueLane direction="west" state={state} orientation="horizontal" />
+        <div className="border-primary/30 bg-card/90 glow-primary flex aspect-square w-20 flex-col items-center justify-center gap-1 self-center justify-self-center rounded-xl border text-center backdrop-blur-md sm:w-28">
+          <span className="text-primary/80 font-mono text-[9px] tracking-widest uppercase">
+            Timer
+          </span>
+          <span className="text-primary font-mono text-lg font-bold tabular-nums capitalize sm:text-xl">
+            {state.activeDirection ? `${state.currentGreenTimeSeconds}s` : "—"}
+          </span>
+          <span className="text-muted-foreground text-[10px] capitalize">
+            {state.activeDirection ?? "idle"}
+          </span>
+        </div>
+        <VehicleQueueLane direction="east" state={state} orientation="horizontal" />
+
+        <div />
+        <VehicleQueueLane direction="south" state={state} orientation="vertical" />
+        <div />
+      </div>
 
       <span className="sr-only" aria-live="polite">
         {state.activeDirection

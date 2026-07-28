@@ -10,7 +10,7 @@
   --card-foreground: oklch(0.18 0.01 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.01 260);
-  --primary: oklch(0.55 0.18 255);
+  --primary: oklch(0.5 0.19 255);
   --primary-foreground: oklch(0.98 0.005 260);
   --secondary: oklch(0.95 0.01 260);
   --secondary-foreground: oklch(0.22 0.01 260);
@@ -20,40 +20,44 @@
   --accent-foreground: oklch(0.22 0.01 260);
   --destructive: oklch(0.58 0.22 25);
   --destructive-foreground: oklch(0.98 0.005 260);
+  --success: oklch(0.56 0.15 155);
+  --success-foreground: oklch(0.98 0.005 260);
   --border: oklch(0.9 0.01 260);
   --input: oklch(0.9 0.01 260);
-  --ring: oklch(0.55 0.18 255);
-  --radius: 0.65rem;
+  --ring: oklch(0.5 0.19 255);
+  --radius: 0.4rem;
 
-  --signal-red: oklch(0.58 0.22 25);
-  --signal-amber: oklch(0.78 0.16 75);
-  --signal-green: oklch(0.65 0.18 145);
+  --signal-red: #ef4444;
+  --signal-amber: #f59e0b;
+  --signal-green: #10b981;
 }
 
 .dark {
-  --background: oklch(0.16 0.015 260);
-  --foreground: oklch(0.95 0.005 260);
-  --card: oklch(0.2 0.015 260);
-  --card-foreground: oklch(0.95 0.005 260);
-  --popover: oklch(0.2 0.015 260);
-  --popover-foreground: oklch(0.95 0.005 260);
-  --primary: oklch(0.7 0.16 255);
-  --primary-foreground: oklch(0.16 0.015 260);
-  --secondary: oklch(0.26 0.015 260);
-  --secondary-foreground: oklch(0.95 0.005 260);
-  --muted: oklch(0.26 0.015 260);
-  --muted-foreground: oklch(0.68 0.015 260);
-  --accent: oklch(0.28 0.03 255);
-  --accent-foreground: oklch(0.95 0.005 260);
-  --destructive: oklch(0.63 0.22 25);
-  --destructive-foreground: oklch(0.98 0.005 260);
-  --border: oklch(0.32 0.015 260);
-  --input: oklch(0.32 0.015 260);
-  --ring: oklch(0.7 0.16 255);
+  --background: #10131a;
+  --foreground: #e1e2ec;
+  --card: #191b23;
+  --card-foreground: #e1e2ec;
+  --popover: #1d2027;
+  --popover-foreground: #e1e2ec;
+  --primary: #adc6ff;
+  --primary-foreground: #002e6a;
+  --secondary: #272a31;
+  --secondary-foreground: #e1e2ec;
+  --muted: #1d2027;
+  --muted-foreground: #c2c6d6;
+  --accent: #32353c;
+  --accent-foreground: #e1e2ec;
+  --destructive: #ef4444;
+  --destructive-foreground: #fef2f2;
+  --success: #4edea3;
+  --success-foreground: #003824;
+  --border: #424754;
+  --input: #424754;
+  --ring: #adc6ff;
 
-  --signal-red: oklch(0.63 0.22 25);
-  --signal-amber: oklch(0.8 0.16 75);
-  --signal-green: oklch(0.7 0.18 145);
+  --signal-red: #ef4444;
+  --signal-amber: #f59e0b;
+  --signal-green: #10b981;
 }
 
 @theme inline {
@@ -73,6 +77,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -83,8 +89,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 @layer base {
@@ -100,6 +106,48 @@
   }
   ::selection {
     @apply bg-primary/20;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(127, 140, 168, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(127, 140, 168, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .glow-primary {
+    box-shadow: 0 0 15px color-mix(in oklch, var(--primary) 45%, transparent);
+  }
+  .glow-success {
+    box-shadow: 0 0 15px color-mix(in oklch, var(--success) 45%, transparent);
+  }
+  .glow-destructive {
+    box-shadow: 0 0 15px color-mix(in oklch, var(--destructive) 55%, transparent);
+  }
+  .glow-signal-red {
+    box-shadow: 0 0 8px var(--signal-red);
+  }
+  .glow-signal-amber {
+    box-shadow: 0 0 8px var(--signal-amber);
+  }
+  .glow-signal-green {
+    box-shadow: 0 0 8px var(--signal-green);
+  }
+
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(0.95);
+    }
+  }
+  .animate-pulse-soft {
+    animation: pulse-soft 2s infinite ease-in-out;
   }
 }
 

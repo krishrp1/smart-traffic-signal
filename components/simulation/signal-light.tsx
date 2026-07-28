@@ -19,9 +19,9 @@ export function SignalLight({ active, caution, className }: SignalLightProps) {
       <span
         className={cn(
           "size-2.5 rounded-full transition-colors duration-300",
-          color === "signal-red" && "bg-signal-red shadow-[0_0_8px_var(--signal-red)]",
-          color === "signal-amber" && "bg-signal-amber shadow-[0_0_8px_var(--signal-amber)]",
-          color === "signal-green" && "bg-signal-green shadow-[0_0_8px_var(--signal-green)]",
+          color === "signal-red" && "bg-signal-red glow-signal-red",
+          color === "signal-amber" && "bg-signal-amber glow-signal-amber animate-pulse-soft",
+          color === "signal-green" && "bg-signal-green glow-signal-green",
         )}
       />
     </div>
