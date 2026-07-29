@@ -116,7 +116,7 @@ export function IntersectionCanvas({ state }: { state: SimulationState }) {
           <span className="text-primary/80 font-mono text-[9px] tracking-widest uppercase">
             Timer
           </span>
-          <span className="text-primary font-mono text-lg font-bold tabular-nums capitalize sm:text-xl">
+          <span className="text-primary font-mono text-lg font-bold capitalize tabular-nums sm:text-xl">
             {state.activeDirection ? `${state.currentGreenTimeSeconds}s` : "—"}
           </span>
           <span className="text-muted-foreground text-[10px] capitalize">

@@ -24,7 +24,12 @@ export function ControlPanel({ sim }: { sim: TrafficSimulationApi }) {
             Playback
           </span>
           <div className="flex items-center gap-2">
-            <Button onClick={sim.reset} variant="secondary" size="icon" aria-label="Reset simulation">
+            <Button
+              onClick={sim.reset}
+              variant="secondary"
+              size="icon"
+              aria-label="Reset simulation"
+            >
               <RotateCcw aria-hidden="true" />
             </Button>
             <Button

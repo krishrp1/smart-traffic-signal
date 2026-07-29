@@ -110,7 +110,10 @@ export function ScenarioControls({ sim }: { sim: TrafficSimulationApi }) {
                   )}
                 >
                   <TriangleAlert
-                    className={cn("size-4 shrink-0", isBlocked ? "text-signal-red" : "text-muted-foreground")}
+                    className={cn(
+                      "size-4 shrink-0",
+                      isBlocked ? "text-signal-red" : "text-muted-foreground",
+                    )}
                     aria-hidden="true"
                   />
                   {DIRECTION_LABELS[direction]}
@@ -131,7 +134,7 @@ export function ScenarioControls({ sim }: { sim: TrafficSimulationApi }) {
                 key={direction}
                 type="button"
                 onClick={() => handleEmergency(direction)}
-                className="border-border bg-secondary/40 hover:bg-success/10 hover:border-success group flex items-center gap-2 rounded-lg border p-2.5 text-left text-sm font-medium text-foreground transition-colors"
+                className="border-border bg-secondary/40 hover:bg-success/10 hover:border-success group text-foreground flex items-center gap-2 rounded-lg border p-2.5 text-left text-sm font-medium transition-colors"
               >
                 <Siren
                   className="text-muted-foreground group-hover:text-success size-4 shrink-0 transition-colors"

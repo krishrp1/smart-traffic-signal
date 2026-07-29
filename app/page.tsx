@@ -49,7 +49,7 @@ export default function Home() {
                 aria-pressed={isActive}
                 onClick={() => setActiveChip(isActive ? null : chip.label)}
                 className={cn(
-                  "font-mono rounded-full border px-3 py-1 text-[10px] font-bold tracking-widest uppercase transition-all",
+                  "rounded-full border px-3 py-1 font-mono text-[10px] font-bold tracking-widest uppercase transition-all",
                   isActive
                     ? "bg-primary text-primary-foreground border-primary glow-primary"
                     : "bg-secondary/60 text-muted-foreground border-border hover:bg-secondary hover:text-foreground",
