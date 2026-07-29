@@ -90,7 +90,7 @@ export function MetricsGrid({ state }: { state: SimulationState }) {
       {metrics.map(({ label, value, icon: Icon, hint, accent }, index) => (
         <div
           key={label}
-          className="bg-card/95 border-border animate-in fade-in-0 slide-in-from-bottom-2 fill-mode-backwards flex flex-col justify-between gap-2 rounded-lg border p-4 backdrop-blur-md duration-500"
+          className="glass animate-in fade-in-0 slide-in-from-bottom-2 fill-mode-backwards flex flex-col justify-between gap-2 rounded-lg p-4 duration-500"
           style={{ animationDelay: `${index * 60}ms` }}
         >
           <div className="flex items-center justify-between gap-2">

@@ -40,7 +40,13 @@ function VehicleQueueLane({ direction, state, orientation }: LaneProps) {
     <div
       className={cn(
         "relative flex min-h-0 min-w-0 flex-1 items-center justify-center gap-2 p-2",
-        orientation === "vertical" ? "flex-col" : "flex-row",
+        orientation === "vertical"
+          ? direction === "north"
+            ? "flex-col-reverse"
+            : "flex-col"
+          : direction === "west"
+            ? "flex-row-reverse"
+            : "flex-row",
       )}
     >
       <div
@@ -94,10 +100,7 @@ function VehicleQueueLane({ direction, state, orientation }: LaneProps) {
 
 export function IntersectionCanvas({ state }: { state: SimulationState }) {
   return (
-    <div
-      className="bg-card border-border relative overflow-hidden rounded-xl border p-3 sm:p-4"
-      aria-live="off"
-    >
+    <div className="glass relative overflow-hidden rounded-xl p-3 sm:p-4" aria-live="off">
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
       <div
         className="text-primary bg-primary/10 border-primary/20 absolute top-3 left-3 z-10 rounded border px-2 py-0.5 font-mono text-[9px] tracking-widest uppercase"

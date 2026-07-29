@@ -11,7 +11,7 @@ export function ControlPanel({ sim }: { sim: TrafficSimulationApi }) {
   const { state } = sim;
 
   return (
-    <Card>
+    <Card className="glass">
       <CardHeader>
         <CardTitle className="text-foreground flex items-center gap-2 font-mono text-xs font-bold tracking-widest uppercase">
           <SlidersHorizontal className="text-primary size-4" aria-hidden="true" />

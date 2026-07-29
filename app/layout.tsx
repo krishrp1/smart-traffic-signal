@@ -84,6 +84,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           >
             Skip to main content
           </a>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+          >
+            <div className="bg-signal-green/25 absolute -top-32 -left-32 size-96 rounded-full blur-3xl" />
+            <div className="bg-primary/25 absolute top-1/3 -right-32 size-[28rem] rounded-full blur-3xl" />
+            <div className="bg-signal-amber/15 absolute -bottom-40 left-1/4 size-96 rounded-full blur-3xl" />
+          </div>
           <div className="flex min-h-dvh flex-col">
             <Navbar />
             <main id="main-content" className="flex-1">
